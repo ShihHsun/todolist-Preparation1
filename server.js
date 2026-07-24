@@ -1,5 +1,5 @@
+import { v4 as uuidv4 } from uuid;
 const http = require('http');
-const { v4: uuidv4 } = require("uuid");
 const errHandle = require("./errHandle.js");
 const todos = [];
 
