@@ -72,9 +72,8 @@ const requestListener = (req, res) => {
       errorHandle(res);
     }
 
-  
-  //跨網域設計
-  }else if(req.url === "/todos" && req.method === "PATCH"){
+
+  }else if(req.url.startsWith("/todos/") && req.method === "PATCH"){
     req.on("end", () => {
       try {
         const todo = JSON.parse(body).title;
@@ -88,7 +87,7 @@ const requestListener = (req, res) => {
             status: "success",
             data: todos,
           }));
-          res.end();
+
         }else{
           errorHandle(res);
         }
@@ -97,6 +96,7 @@ const requestListener = (req, res) => {
         errorHandle(res);
       }
     })
+    //跨網域設計
   }else if(req.method == "OPTIONS"){
     res.writeHead(200,headers);
     res.end();
