@@ -69,7 +69,7 @@ const requestListener = (req, res) => {
       }));
       res.end();  
     }else{
-      errorHandle(res);
+      errHandle(res);
     }
 
 
@@ -89,11 +89,11 @@ const requestListener = (req, res) => {
           }));
 
         }else{
-          errorHandle(res);
+          errHandle(res);
         }
 
       }catch{
-        errorHandle(res);
+        errHandle(res);
       }
     })
     //跨網域設計
